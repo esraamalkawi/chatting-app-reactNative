@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Text } from "react-native";
 import {
   NativeBaseProvider,
   Box,
@@ -8,6 +8,7 @@ import {
   FormControl,
   Input,
   Button,
+  Link,
 } from "native-base";
 import { signin } from "../../store/actions/userActions";
 import { useDispatch } from "react-redux";
@@ -55,7 +56,16 @@ const Signin = ({ navigation }) => {
             />
           </FormControl>
           <VStack space={2}>
-            <Button onPress={handleSubmit}>Login</Button>
+            <Button onPress={handleSubmit}>Signin</Button>
+          </VStack>
+          <VStack space={2}>
+            {/* <Text>dont have accout! please sign up there</Text> */}
+            {/* <Button onPress={() => navigation.navigate("Signup")}>
+              Signup
+            </Button> */}
+            <Link onPress={() => navigation.navigate("Signup")} mt={4}>
+              dont have accout! please sign up here
+            </Link>
           </VStack>
         </VStack>
       </Box>

@@ -13,7 +13,7 @@ export const createUser = (userData, navigation) => {
           type: actionTypes.SET_USER,
           payload: res.data,
         },
-        navigation.navigate("Signin")
+        navigation.navigate("ChatList")
       );
     } catch (error) {
       console.log(error);
@@ -32,7 +32,7 @@ export const signin = (userData, navigation) => {
           type: actionTypes.SET_USER,
           payload: decode(res.data.token),
         },
-        navigation.navigate("Signup")
+        navigation.navigate("ChatList")
       );
     } catch (error) {
       console.log(error);
