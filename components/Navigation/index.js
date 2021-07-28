@@ -1,7 +1,6 @@
 import React from "react";
 
 import { createStackNavigator } from "@react-navigation/stack";
-import Home from "../Home";
 
 import Signin from "../authentication/Signin";
 import Signup from "../authentication/Signup";
@@ -19,7 +18,6 @@ const StackNavigator = () => {
         },
       }}
     >
-      {/* <Screen name="Home" component={Home} options={{ headerShown: false }} /> */}
       <Screen name="ChatList" component={ChatList} />
       <Screen name="MessageList" component={MessageList} />
       <Screen name="Signin" component={Signin} />
