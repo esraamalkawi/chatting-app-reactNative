@@ -6,22 +6,24 @@ import { Center, Spinner, List, Box } from "native-base";
 import MessageItem from "./MessageItem.js";
 import ChatItem from "../Chat/ChatItem";
 
-const MessageList = ({ messagesIds, navigation }) => {
+const MessageList = ({ navigation, chat }) => {
+  const { chat } = route.params;
   const messages = useSelector((state) => state.messages.messages);
   const messageLoading = useSelector((state) => state.messages.loading);
-  console.log(messagesIds);
   if (messageLoading)
     return (
       <Center flex={1}>
         <Spinner />
       </Center>
     );
-  const chatMessages = messagesIds.map((_message) =>
-    messages.find((message) => message.id === _message.id)
-  );
-  const messageList = chatMessages.map((message) => (
-    <MessageItem key={message.id} navigation={navigation} message={message} />
-  ));
+
+  //filter
+
+  const messageList = messages
+    .filter((message) => message.chatId === chat.id)
+    .map((_message) => (
+      <MessageItem key={message.id} navigation={navigation} message={message} />
+    ));
 
   return (
     <Center flex={1}>
