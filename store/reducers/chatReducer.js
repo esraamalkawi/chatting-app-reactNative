@@ -18,7 +18,6 @@ const chatReducer = (state = initialState, action) => {
     case actionTypes.FETCH_CHAT:
       return {
         ...state,
-
         chats: action.payload,
         loading: false,
       };

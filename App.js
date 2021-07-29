@@ -5,7 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { Provider } from "react-redux";
 import store from "./store/index";
 
-import RootNavigator from "./component/Navigation/index";
+import RootNavigator from "./components/Navigation/index";
 
 export default function App() {
   return (

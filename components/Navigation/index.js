@@ -2,8 +2,8 @@ import React from "react";
 
 import { createStackNavigator } from "@react-navigation/stack";
 
-import Signin from "../authentication/Signin";
-import Signup from "../authentication/Signup";
+import Signin from "../Authentication/Signin";
+import Signup from "../Authentication/Signup";
 import ChatList from "../Chat/ChatList";
 import MessageList from "../Message/MessageList";
 
@@ -17,9 +17,24 @@ const StackNavigator = () => {
           backgroundColor: "grey",
         },
       }}
+      //   <Screen
+      //   name="ProductDetail"
+      //   component={ProductDetail}
+      //   options={({ navigation, route }) => ({
+      //     title: route.params.product.name,
+      //     headerRight: () => <CartButton navigation={navigation} />,
+      //   })}
+      // />
     >
       <Screen name="ChatList" component={ChatList} />
-      <Screen name="MessageList" component={MessageList} />
+      <Screen
+        name="MessageList"
+        component={MessageList}
+        options={({ navigation, chat }) => ({
+          body: () => <MessageList chat={chat} />,
+          // headerRight: () => <CartButton navigation={navigation} />,
+        })}
+      />
       <Screen name="Signin" component={Signin} />
       <Screen name="Signup" component={Signup} />
     </Navigator>

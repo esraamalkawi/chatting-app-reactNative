@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text } from "react-native";
+
 import {
   NativeBaseProvider,
   Box,
@@ -59,10 +59,6 @@ const Signin = ({ navigation }) => {
             <Button onPress={handleSubmit}>Signin</Button>
           </VStack>
           <VStack space={2}>
-            {/* <Text>dont have accout! please sign up there</Text> */}
-            {/* <Button onPress={() => navigation.navigate("Signup")}>
-              Signup
-            </Button> */}
             <Link onPress={() => navigation.navigate("Signup")} mt={4}>
               dont have accout! please sign up here
             </Link>
