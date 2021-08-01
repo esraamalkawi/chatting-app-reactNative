@@ -14,19 +14,21 @@ const MessageList = ({ navigation, route }) => {
         <Spinner />
       </Center>
     );
-
+  console.log("message list here", messages);
+  console.log("message list here", chat.id);
   const messageList = messages
     .filter((message) => message.chatId === chat.id)
     .map((_message) => (
-      <MessageItem key={message.id} navigation={navigation} message={message} />
+      <MessageItem
+        key={_message.id}
+        navigation={navigation}
+        message={_message}
+      />
     ));
 
   return (
     <Center flex={1}>
       <Box w="70%">
-        {/* <Text>
-          <ChatItem></ChatItem>
-        </Text> */}
         <List>{messageList}</List>
       </Box>
     </Center>
