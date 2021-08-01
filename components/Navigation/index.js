@@ -6,6 +6,7 @@ import Signin from "../Authentication/Signin";
 import Signup from "../Authentication/Signup";
 import ChatList from "../Chat/ChatList";
 import MessageList from "../Message/MessageList";
+import UserList from "../Chat/UserList";
 
 const StackNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
@@ -22,11 +23,12 @@ const StackNavigator = () => {
       <Screen
         name="MessageList"
         component={MessageList}
-        // options={({ navigation, chat }) => ({
-
-        //   // headerRight: () => <CartButton navigation={navigation} />,
-        // })}
+        options={({ navigation, route }) => ({
+          title: route.params.chat.name,
+          // title: route.params.chat.image,
+        })}
       />
+      <Screen name="UserList" component={UserList} />
       <Screen name="Signin" component={Signin} />
       <Screen name="Signup" component={Signup} />
     </Navigator>
