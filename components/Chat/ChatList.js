@@ -7,6 +7,7 @@ import ChatItem from "./ChatItem";
 
 const ChatList = ({ navigation }) => {
   const chats = useSelector((state) => state.chats.chats);
+  console.log("chat list", chats);
   const chatLoading = useSelector((state) => state.chats.loading);
   if (chatLoading)
     return (

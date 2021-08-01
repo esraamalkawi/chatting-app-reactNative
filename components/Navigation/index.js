@@ -17,23 +17,15 @@ const StackNavigator = () => {
           backgroundColor: "grey",
         },
       }}
-      //   <Screen
-      //   name="ProductDetail"
-      //   component={ProductDetail}
-      //   options={({ navigation, route }) => ({
-      //     title: route.params.product.name,
-      //     headerRight: () => <CartButton navigation={navigation} />,
-      //   })}
-      // />
     >
       <Screen name="ChatList" component={ChatList} />
       <Screen
         name="MessageList"
         component={MessageList}
-        options={({ navigation, chat }) => ({
-          body: () => <MessageList chat={chat} />,
-          // headerRight: () => <CartButton navigation={navigation} />,
-        })}
+        // options={({ navigation, chat }) => ({
+
+        //   // headerRight: () => <CartButton navigation={navigation} />,
+        // })}
       />
       <Screen name="Signin" component={Signin} />
       <Screen name="Signup" component={Signup} />
