@@ -3,7 +3,7 @@ import React from "react";
 import { List } from "native-base";
 import DeleteButton from "../Buttons/DeleteButton";
 
-const ProductItem = ({ navigation, message }) => {
+const ProductItem = ({ message }) => {
   return (
     <>
       <List.Item>{message.message}</List.Item>

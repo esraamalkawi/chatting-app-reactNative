@@ -8,7 +8,7 @@ import { deleteChat } from "../../store/actions/chatActions";
 
 const DeleteButton = ({ messageId, chatId }) => {
   const dispatch = useDispatch();
-  console.log(messageId);
+
   const handelDelete = () => {
     if (messageId) {
       dispatch(deleteMessage(messageId));

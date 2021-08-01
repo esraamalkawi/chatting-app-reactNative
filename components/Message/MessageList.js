@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { Center, Spinner, List, Box } from "native-base";
 import MessageItem from "./MessageItem.js";
 
+import MessageInput from "./MessageInput.js";
+
 const MessageList = ({ navigation, route }) => {
   const { chat } = route.params;
   const messages = useSelector((state) => state.messages.messages);
@@ -14,8 +16,7 @@ const MessageList = ({ navigation, route }) => {
         <Spinner />
       </Center>
     );
-  console.log("message list here", messages);
-  console.log("message list here", chat.id);
+
   const messageList = messages
     .filter((message) => message.chatId === chat.id)
     .map((_message) => (
@@ -30,6 +31,9 @@ const MessageList = ({ navigation, route }) => {
     <Center flex={1}>
       <Box w="70%">
         <List>{messageList}</List>
+        <List>
+          <MessageInput chatId={chat.id} />
+        </List>
       </Box>
     </Center>
   );
