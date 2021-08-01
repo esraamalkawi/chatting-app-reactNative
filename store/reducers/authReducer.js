@@ -2,6 +2,7 @@ import * as actionTypes from "../actions/types";
 
 const initialState = {
   user: null,
+  allUsers: [],
 };
 
 const userReducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         user: action.payload,
+      };
+    case actionTypes.FETCH_USERS:
+      return {
+        ...state,
+        allUsers: action.payload,
       };
     default:
       return state;

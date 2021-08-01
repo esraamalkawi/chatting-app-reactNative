@@ -9,21 +9,16 @@ const MessageInput = ({ chatId }) => {
   const users = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
 
-  const [message, setMessage] = useState({
+  const [_message, setMessage] = useState({
     message: "",
     name: users?.username,
     received: true,
     timestamp: new Date().toISOString().slice(0, 10),
   });
 
-  const handleChange = (event) => {
-    setMessage({ ...message, [event?.target?.name]: event?.target?.value });
-  };
+  const handlePress = () => {
+    const newMessage = { ..._message, chatId: chatId };
 
-  const handlePress = (event) => {
-    event.preventDefault();
-    const newMessage = { ...message, chatId: chatId };
-    console.log("test the action", newMessage);
     dispatch(createMessage(newMessage));
   };
 
@@ -31,8 +26,8 @@ const MessageInput = ({ chatId }) => {
     <SafeAreaView>
       <TextInput
         style={styles.input}
-        setMessage={handleChange}
-        value={message}
+        onChangeText={(message) => setMessage({ ..._message, message })}
+        value={_message}
       />
       <Icon
         as={AntDesign}
