@@ -7,7 +7,7 @@ import ChatItem from "./ChatItem";
 
 const ChatList = ({ navigation }) => {
   const chats = useSelector((state) => state.chats.chats);
-  console.log("chat list", chats);
+  // console.log("chat list", chats);
   const chatLoading = useSelector((state) => state.chats.loading);
   if (chatLoading)
     return (
@@ -15,7 +15,7 @@ const ChatList = ({ navigation }) => {
         <Spinner />
       </Center>
     );
-
+  console.log(chats);
   const chatList = chats.map((chat) => (
     <ChatItem key={chat.id} navigation={navigation} chat={chat} />
   ));

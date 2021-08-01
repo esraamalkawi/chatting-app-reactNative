@@ -5,9 +5,9 @@ const ChatItem = ({ navigation, chat }) => {
   console.log("chat item component", chat);
   return (
     <>
-      <List.Item>{chat.image}</List.Item>
+      <List.Item>{chat?.image}</List.Item>
       <List.Item onPress={() => navigation.navigate("MessageList", { chat })}>
-        {chat.name}
+        {chat?.name}
       </List.Item>
     </>
   );
