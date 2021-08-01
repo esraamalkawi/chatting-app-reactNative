@@ -6,7 +6,7 @@ import { Center, Spinner, List, Box } from "native-base";
 import MessageItem from "./MessageItem.js";
 import ChatItem from "../Chat/ChatItem";
 
-const MessageList = ({ navigation, chat }) => {
+const MessageList = ({ navigation, route }) => {
   const { chat } = route.params;
   const messages = useSelector((state) => state.messages.messages);
   const messageLoading = useSelector((state) => state.messages.loading);
