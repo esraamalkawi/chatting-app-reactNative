@@ -4,12 +4,15 @@ import { Icon } from "native-base";
 
 import { useDispatch } from "react-redux";
 import { deleteMessage } from "../../store/actions/messageActions";
+import { deleteChat } from "../../store/actions/chatActions";
 
-const DeleteButton = ({ messageId }) => {
+const DeleteButton = ({ messageId, chatId }) => {
   const dispatch = useDispatch();
   console.log(messageId);
   const handelDelete = () => {
-    dispatch(deleteMessage(messageId));
+    if (messageId) {
+      dispatch(deleteMessage(messageId));
+    } else dispatch(deleteChat(chatId));
   };
   return (
     <>
