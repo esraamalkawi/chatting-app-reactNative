@@ -1,7 +1,7 @@
 import instance from "./instance";
 import * as actionTypes from "./types";
 
-export const deleteMessaget = (messageId) => {
+export const deleteMessage = (messageId) => {
   return async (dispatch) => {
     try {
       await instance.delete(`/messages/${messageId}`);
