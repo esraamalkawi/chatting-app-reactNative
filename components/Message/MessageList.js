@@ -1,10 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { Text } from "react-native";
 import { Center, Spinner, List, Box } from "native-base";
 import MessageItem from "./MessageItem.js";
-import ChatItem from "../Chat/ChatItem";
 
 const MessageList = ({ navigation, route }) => {
   const { chat } = route.params;
@@ -17,8 +15,6 @@ const MessageList = ({ navigation, route }) => {
       </Center>
     );
 
-  //filter
-
   const messageList = messages
     .filter((message) => message.chatId === chat.id)
     .map((_message) => (
@@ -28,9 +24,9 @@ const MessageList = ({ navigation, route }) => {
   return (
     <Center flex={1}>
       <Box w="70%">
-        <Text>
+        {/* <Text>
           <ChatItem></ChatItem>
-        </Text>
+        </Text> */}
         <List>{messageList}</List>
       </Box>
     </Center>
