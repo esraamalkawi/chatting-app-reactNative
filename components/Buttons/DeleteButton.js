@@ -13,8 +13,11 @@ const DeleteButton = ({ messageId, chatId }) => {
     if (messageId) {
       dispatch(deleteMessage(messageId));
     } else dispatch(deleteChat(chatId));
+    // SUGGESTION: since both use dispatch:
+    // dispatch(messageId ? deleteMessage(messageId) : deleteChat(chatId));
   };
   return (
+    // REVIEW: Remove fragment
     <>
       <Icon as={AntDesign} name="delete" color="red" onPress={handelDelete} />
     </>

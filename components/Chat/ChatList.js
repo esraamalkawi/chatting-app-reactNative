@@ -7,9 +7,10 @@ import ChatItem from "./ChatItem";
 
 const ChatList = ({ navigation }) => {
   const chats = useSelector((state) => state.chats.chats);
-
   const chatLoading = useSelector((state) => state.chats.loading);
+
   if (chatLoading)
+    // REVIEW: Move Loading into its own component
     return (
       <Center flex={1}>
         <Spinner />

@@ -25,6 +25,7 @@ const StackNavigator = () => {
         component={MessageList}
         options={({ navigation, route }) => ({
           title: route.params.chat.name,
+          // REVIEW: Remove commented out code
           // title: route.params.chat.image,
         })}
       />

@@ -39,6 +39,7 @@ const MessageInput = ({ chatId }) => {
   );
 };
 
+// REVIEW: Move styling into its own file
 const styles = StyleSheet.create({
   input: {
     height: 40,

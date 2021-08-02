@@ -25,6 +25,8 @@ const Signup = ({ navigation }) => {
     dispatch(createUser(user, navigation));
   };
 
+  // REVIEW: Remove inline styling :)))))
+
   return (
     <NativeBaseProvider>
       <Box flex={1} p={2} w="90%" mx="auto">

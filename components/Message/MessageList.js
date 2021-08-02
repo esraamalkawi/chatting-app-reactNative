@@ -11,6 +11,7 @@ const MessageList = ({ navigation, route }) => {
   const messages = useSelector((state) => state.messages.messages);
   const messageLoading = useSelector((state) => state.messages.loading);
   if (messageLoading)
+    // REVIEW: Move Loading into its own component
     return (
       <Center flex={1}>
         <Spinner />
