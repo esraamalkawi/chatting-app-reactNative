@@ -2302,6 +2302,61 @@
   dependencies:
     "@react-types/shared" "^3.2.1"
 
+"@rpldy/life-events@^0.13.3":
+  version "0.13.3"
+  resolved "https://registry.yarnpkg.com/@rpldy/life-events/-/life-events-0.13.3.tgz#5cec2e5303aec29bbddb6addde435e347794da4f"
+  integrity sha512-Nxg7rFU0yRn7MxXcyhvXN2RPJ6kd/HxPowtSeU9Y8IZSi7KkKG+aLZ2jrR7nI+Beijm0EfOFo7TZJ/i5+ThNLg==
+  dependencies:
+    "@rpldy/shared" "^0.13.3"
+    is-promise "^4.0.0"
+
+"@rpldy/native-uploady@^0.13.3":
+  version "0.13.3"
+  resolved "https://registry.yarnpkg.com/@rpldy/native-uploady/-/native-uploady-0.13.3.tgz#49a6dacfb16d8f1e051bb8177bce02f3cf92f168"
+  integrity sha512-oixxx5biaa8/rv+a4vs7W0I4OLps4LxlDSF4gHlj6ncLdAJkMxcv5zoIdKpM+/w5RPfrXXIMoB3mKCaODPiHEw==
+  dependencies:
+    "@rpldy/shared-ui" "^0.13.3"
+
+"@rpldy/sender@^0.13.3":
+  version "0.13.3"
+  resolved "https://registry.yarnpkg.com/@rpldy/sender/-/sender-0.13.3.tgz#a430f4d2f47485f4087eca6770d06f8c2ccecebb"
+  integrity sha512-4mfRyfEGiQq+/9oGVy2J7pZJMMiOS5exXtLx4uiarUjL6kP/6iLx2GjW7ZLVM+/133LUiz+bcBOQQnBC0gPS3g==
+  dependencies:
+    "@rpldy/shared" "^0.13.3"
+
+"@rpldy/shared-ui@^0.13.3":
+  version "0.13.3"
+  resolved "https://registry.yarnpkg.com/@rpldy/shared-ui/-/shared-ui-0.13.3.tgz#e80a138fe844f0e1e1d6b05937e2237035e890e2"
+  integrity sha512-Okh1vsHN/5Zc+zKwt8iOPIKYPau+lPHtM3aE3QtBwPZEGZAra6DFPoDqlWSYe4f7FDukat7XMjIg3TSm4Gnapw==
+  dependencies:
+    "@rpldy/shared" "^0.13.3"
+    "@rpldy/uploader" "^0.13.3"
+
+"@rpldy/shared@^0.13.3":
+  version "0.13.3"
+  resolved "https://registry.yarnpkg.com/@rpldy/shared/-/shared-0.13.3.tgz#c69bca0753930b6ab694476fc67df9c3891b0ec8"
+  integrity sha512-zf8URy4DjAV8STam8iUfONLf0Vsjq2g6+xZFb9qj7PfAsL5silYoZQTCERXAVdPaRhCsW5hCZei9ijudUkKXYA==
+  dependencies:
+    invariant "^2.2.4"
+    just-throttle "^1.1.0"
+
+"@rpldy/simple-state@^0.13.3":
+  version "0.13.3"
+  resolved "https://registry.yarnpkg.com/@rpldy/simple-state/-/simple-state-0.13.3.tgz#c2fbaa66d396a5b7e8262e16750cef3434654466"
+  integrity sha512-uD1a1h1krpqiqibJkuiEzbE1BxzlgJAq+SNnL1Zb3Oh+L7hUa3B/l1BxUeQ1GUGsl+rVy1isagOcXfDRLcfWZA==
+  dependencies:
+    "@rpldy/shared" "^0.13.3"
+
+"@rpldy/uploader@^0.13.3":
+  version "0.13.3"
+  resolved "https://registry.yarnpkg.com/@rpldy/uploader/-/uploader-0.13.3.tgz#b0f6683b6b8ac367ccfec9f0fff25c2a3334a8b7"
+  integrity sha512-cXjgQ25zXL7D5S4RiYZkJMuobicOMSC7UWYQ7e56RIbpef9f/jw4wAWwr3s+xtdYm7BZz5pa0+jLxBynvUBWMA==
+  dependencies:
+    "@rpldy/life-events" "^0.13.3"
+    "@rpldy/sender" "^0.13.3"
+    "@rpldy/shared" "^0.13.3"
+    "@rpldy/simple-state" "^0.13.3"
+
 "@styled-system/background@^5.1.2":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@styled-system/background/-/background-5.1.2.tgz#75c63d06b497ab372b70186c0bf608d62847a2ba"
@@ -3737,6 +3792,16 @@ expo-font@~9.2.1:
     expo-modules-core "~0.2.0"
     fontfaceobserver "^2.1.0"
 
+expo-image-picker@^10.2.2:
+  version "10.2.2"
+  resolved "https://registry.yarnpkg.com/expo-image-picker/-/expo-image-picker-10.2.2.tgz#7501a13306029f672a165f53545ee5dc5f5dc009"
+  integrity sha512-LCssY/wy4Y/7YsxoUO7PvjqwtQ9L84hxP86RLPnRSUSZy7s+00wnHFctrrtQ0UO4yR2i7rKTMTpkBEP6NVHv2w==
+  dependencies:
+    "@expo/config-plugins" "^3.0.0"
+    expo-modules-core "~0.2.0"
+    expo-permissions "~12.1.1"
+    uuid "7.0.2"
+
 expo-keep-awake@~9.2.0:
   version "9.2.0"
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-9.2.0.tgz#9cbdcc8264c943ef29a58326236cd34267e98f43"
@@ -3757,6 +3822,13 @@ expo-modules-core@~0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/expo-modules-core/-/expo-modules-core-0.2.0.tgz#68e5b6e53d0afbf8d131578831aed657589a2d42"
   integrity sha512-inpfZ5X/BaTtbj2wG9PA9AC0MN8VyId6KSRlVuEg7+ziurHBy/kKDFxpOddUokhwiln2uhoYPSStJjR/tKypdw==
+
+expo-permissions@~12.1.1:
+  version "12.1.1"
+  resolved "https://registry.yarnpkg.com/expo-permissions/-/expo-permissions-12.1.1.tgz#93fd8569d4106ff9dd66d67619cb69a0aa895482"
+  integrity sha512-fHBB4A/aWMcvdmDY79gpgQt0ufKG8F1gwTgO3+RjjudVe5kovNy5TeXdHrCa0MksFVKjktqLjJrgiBITJXjg+g==
+  dependencies:
+    expo-modules-core "~0.2.0"
 
 expo-status-bar@~1.0.4:
   version "1.0.4"
@@ -4523,6 +4595,11 @@ is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   dependencies:
     isobject "^3.0.1"
 
+is-promise@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/is-promise/-/is-promise-4.0.0.tgz#42ff9f84206c1991d26debf520dd5c01042dd2f3"
+  integrity sha512-hvpoI6korhJMnej285dSg6nu1+e6uxs7zG3BYAm5byqDsgJNWwxzM6z6iZiAgQR4TJ30JmBTOwqZUw3WlyH3AQ==
+
 is-stream@^1.0.1, is-stream@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-stream/-/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
@@ -4752,6 +4829,11 @@ jsonify@~0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
   integrity sha1-LHS27kHZPKUbe1qu6PUDYx0lKnM=
+
+just-throttle@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/just-throttle/-/just-throttle-1.1.0.tgz#178d305ece9876a8a0759abd8d403aafcc6e4849"
+  integrity sha512-iePC/13XYX1Tyn9C6jY+DG3UEejkDvrKsw5xxgGhtGUwYWmoJm4CoKexscBKELOu3FTyCDzjr21ZJ67AXnz+bg==
 
 jwt-decode@^3.1.2:
   version "3.1.2"
@@ -5912,6 +5994,11 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-native-document-picker@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-document-picker/-/react-native-document-picker-5.2.0.tgz#1fb2185a56ba6b2509acdc418a8a75906c31e58e"
+  integrity sha512-zXK34hW6fM0gXoo6v7edZZxKvLT7DyjOdBXi7WrxbKqZchDokTEQ/tNTeZxky+7oI8sVz8T3uXBBEW0sp+VfXQ==
+
 react-native-gesture-handler@^1.10.3:
   version "1.10.3"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.10.3.tgz#942bbf2963bbf49fa79593600ee9d7b5dab3cfc0"
@@ -6982,6 +7069,11 @@ utils-merge@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
+
+uuid@7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-7.0.2.tgz#7ff5c203467e91f5e0d85cfcbaaf7d2ebbca9be6"
+  integrity sha512-vy9V/+pKG+5ZTYKf+VcphF5Oc6EFiu3W8Nv3P3zIh0EqVI80ZxOzuPfe9EHjkFNvf8+xuTHVeei4Drydlx4zjw==
 
 uuid@^3.3.2, uuid@^3.4.0:
   version "3.4.0"

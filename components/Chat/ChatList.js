@@ -28,7 +28,7 @@ const ChatList = ({ navigation }) => {
           as={AntDesign}
           name="addusergroup"
           color="red"
-          onPress={() => navigation.navigate("UserList")}
+          onPress={() => navigation.navigate("CreateChat")}
         />
         <List>{chatList}</List>
       </Box>
