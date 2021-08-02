@@ -10,6 +10,7 @@ import {
   View,
   Platform,
 } from "native-base";
+import MultiSelect from "react-native-multiple-select";
 import { useDispatch, useSelector } from "react-redux";
 import * as ImagePicker from "expo-image-picker";
 import UserList from "./UserList";
@@ -17,15 +18,17 @@ import { fetchUsers } from "../../store/actions/userActions";
 import { createChat } from "../../store/actions/chatActions";
 
 const CreateChat = () => {
-  const users = useSelector((state) => state.user.user);
-
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, []);
   const _allUsers = useSelector((state) => state.user.allUsers);
 
+  console.log("create chat here", _allUsers);
   const listOfUsers = _allUsers.map((user) => {
-    return { value: user.id, label: user.username };
+    return <Select.Item value={user.id} label={user.username} />;
   });
 
-  const [id, setId] = useState([]);
+  const [users, setUsers] = useState([]);
 
   const [image, setImage] = useState(null);
 
@@ -47,10 +50,6 @@ const CreateChat = () => {
   }, []);
 
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchUsers());
-  }, []);
 
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -88,19 +87,40 @@ const CreateChat = () => {
             placeholder="Chat Name"
             onChangeText={(value) => setNewChat({ ...newChat, name: value })}
           />
+          {/* 
+          <MultiSelect
+            hideTags
+            items={items}
+            uniqueKey="id"
+            onSelectedItemsChange={onSelectedItemsChange}
+            selectedItems={selectedItems}
+            selectText="Pick Items"
+            searchInputPlaceholderText="Search Items..."
+            onChangeInput={(text) => console.log(text)}
+            tagRemoveIconColor="#CCC"
+            tagBorderColor="#CCC"
+            tagTextColor="#CCC"
+            selectedItemTextColor="#CCC"
+            selectedItemIconColor="#CCC"
+            itemTextColor="#000"
+            displayKey="name"
+            searchInputStyle={{ color: "#CCC" }}
+            submitButtonColor="#48d22b"
+            submitButtonText="Submit"
+          /> */}
 
           <Select
-            selectedValue={id}
+            selectedValue={users}
             minWidth={200}
             accessibilityLabel="Select users"
             placeholder="Select users"
-            onValueChange={(id) => setId(...id, user.id)}
+            onValueChange={(users) => setUsers([...users, users.id])}
             _selectedItem={{
               bg: "cyan.600",
               endIcon: <CheckIcon size={4} />,
             }}
           >
-            <Select.Item>{listOfUsers}</Select.Item>
+            {listOfUsers}
           </Select>
           <VStack
             style={{
