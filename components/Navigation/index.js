@@ -7,6 +7,7 @@ import Signup from "../Authentication/Signup";
 import ChatList from "../Chat/ChatList";
 import MessageList from "../Message/MessageList";
 import UserList from "../Chat/UserList";
+import CreateChat from "../Chat/CreateChat";
 
 const StackNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
@@ -29,6 +30,7 @@ const StackNavigator = () => {
         })}
       />
       <Screen name="UserList" component={UserList} />
+      <Screen name="CreateChat" component={CreateChat} />
       <Screen name="Signin" component={Signin} />
       <Screen name="Signup" component={Signup} />
     </Navigator>

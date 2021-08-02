@@ -10,6 +10,7 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 
 store.dispatch(fetchMessages());
 store.dispatch(fetchChats());
+
 store.dispatch(fetchUsers());
 
 export default store;

@@ -1,20 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUsers } from "../../store/actions/userActions";
+
 import { Text } from "react-native";
-import { Center, Box } from "native-base";
+import { Center, List, Box } from "native-base";
+import UserItem from "./UserItem";
+import { fetchUsers } from "../../store/actions/userActions";
 
 const UserList = () => {
+  const _allUsers = useSelector((state) => state.user.allUsers);
+
+  const userList = _allUsers.map((user) => (
+    <UserItem key={user.id} user={user} />
+  ));
+
   const dispatch = useDispatch();
 
-  const _allUsers = () => {
+  useEffect(() => {
     dispatch(fetchUsers());
-  };
+  }, []);
 
   return (
     <Center flex={1}>
       <Box w="70%">
-        <Text>{_allUsers()}</Text>
+        <Text>Users</Text>
+
+        <List>{userList}</List>
       </Box>
     </Center>
   );
