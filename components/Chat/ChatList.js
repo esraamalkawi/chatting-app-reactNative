@@ -24,15 +24,13 @@ const ChatList = ({ navigation }) => {
     <View style={styles.container}>
       <Box w="90%">
         <Text>Chats</Text>
-        <Icon
+        {/* <Icon
           as={AntDesign}
           name="addusergroup"
           color="red"
           onPress={() => navigation.navigate("CreateChat")}
-        />
-        <List>{chatList}
-
-        </List>
+        /> */}
+        <List>{chatList}</List>
       </Box>
     </View>
   );

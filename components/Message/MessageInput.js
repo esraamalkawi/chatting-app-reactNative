@@ -3,7 +3,10 @@ import { SafeAreaView, StyleSheet, TextInput } from "react-native";
 import { Ionicons, AntDesign } from "@expo/vector-icons";
 import { Icon, Input, Image } from "native-base";
 import { useDispatch, useSelector } from "react-redux";
-import { createMessage } from "../../store/actions/messageActions";
+import {
+  createMessage,
+  fetchMessages,
+} from "../../store/actions/messageActions";
 import * as ImagePicker from "expo-image-picker";
 
 const MessageInput = ({ chatId }) => {
@@ -42,25 +45,48 @@ const MessageInput = ({ chatId }) => {
 
     if (!result.cancelled) {
       setImg(result.uri);
+      // ImagePicker saves the taken photo to disk and returns a local URI to it
+      let localUri = result.uri;
+      let filename = localUri.split("/").pop();
+
+      // Infer the type of the image
+      let match = /\.(\w+)$/.exec(filename);
+      let type = match ? `image/${match[1]}` : `image`;
+      setMessage({
+        ..._message,
+        image: { uri: localUri, name: filename, type },
+      });
     }
   };
 
-  const handlePress = () => {
+  const handlePress = async () => {
     const newMessage = {
       ..._message,
       chatId: chatId,
-      image: img,
     };
 
-    dispatch(createMessage(newMessage));
+    await dispatch(createMessage(newMessage));
+    dispatch(fetchMessages());
+    setMessage({
+      message: "",
+      image: "",
+      name: users?.username,
+      received: true,
+      timestamp: new Date().toISOString().slice(0, 10),
+    });
+    setImg(null);
   };
+
+  useEffect(() => {
+    dispatch(fetchMessages());
+  }, [_message]);
 
   return (
     <SafeAreaView style={styles.Safe}>
       <TextInput
         style={styles.input}
         onChangeText={(message) => setMessage({ ..._message, message })}
-        value={_message}
+        value={_message.message}
       />
       <Icon
         style={styles.Icon}
