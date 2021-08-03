@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { StyleSheet } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 import { Center, Spinner, List, Box } from "native-base";
 import MessageItem from "./MessageItem.js";
 
@@ -29,12 +29,16 @@ const MessageList = ({ navigation, route }) => {
 
   return (
     <Center flex={1}>
-      <Box w="90%" style={styles.Box}>
-        <List style={styles.List}>{messageList}</List>
-        <List>
-          <MessageInput chatId={chat.id} />
-        </List>
+      <Box w="99%" style={styles.Box}>
+        <ScrollView>
+          <List style={styles.List}>{messageList}</List>
+        </ScrollView>
       </Box>
+
+      <MessageInput chatId={chat.id} />
+      {/* <List>
+        <MessageInput chatId={chat.id} />
+      </List> */}
     </Center>
   );
 };
@@ -43,6 +47,7 @@ export default MessageList;
 const styles = StyleSheet.create({
   Box: {
     display: "flex",
-    flexDirection: "column"
+    flexDirection: "column",
+    marginTop: 45,
   },
 });

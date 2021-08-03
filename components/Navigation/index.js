@@ -16,7 +16,7 @@ const StackNavigator = () => {
       initialRouteName="Signin"
       screenOptions={{
         headerStyle: {
-          backgroundColor: "grey",
+          backgroundColor: "#b2b8b8",
         },
       }}
     >
