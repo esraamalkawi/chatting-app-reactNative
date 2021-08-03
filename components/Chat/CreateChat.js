@@ -18,9 +18,7 @@ import { fetchUsers } from "../../store/actions/userActions";
 import { createChat } from "../../store/actions/chatActions";
 
 const CreateChat = () => {
-  useEffect(() => {
-    dispatch(fetchUsers());
-  }, []);
+  const dispatch = useDispatch();
   const _allUsers = useSelector((state) => state.user.allUsers);
 
   console.log("create chat here", _allUsers);
@@ -48,8 +46,9 @@ const CreateChat = () => {
       }
     })();
   }, []);
-
-  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, []);
 
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
