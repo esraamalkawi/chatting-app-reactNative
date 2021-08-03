@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { AntDesign } from "@expo/vector-icons";
-import { Text } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import { Center, Spinner, List, Box, Icon } from "native-base";
 import ChatItem from "./ChatItem";
 
@@ -21,8 +21,8 @@ const ChatList = ({ navigation }) => {
   ));
 
   return (
-    <Center flex={1}>
-      <Box w="70%">
+    <View style={styles.container}>
+      <Box w="90%">
         <Text>Chats</Text>
         <Icon
           as={AntDesign}
@@ -30,10 +30,20 @@ const ChatList = ({ navigation }) => {
           color="red"
           onPress={() => navigation.navigate("CreateChat")}
         />
-        <List>{chatList}</List>
+        <List>{chatList}
+
+        </List>
       </Box>
-    </Center>
+    </View>
   );
 };
 
 export default ChatList;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 40,
+    alignItems: "center",
+  },
+});

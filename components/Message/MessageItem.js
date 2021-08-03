@@ -5,10 +5,13 @@ import DeleteButton from "../Buttons/DeleteButton";
 
 const ProductItem = ({ message }) => {
   return (
-    <>
-      <List.Item>{message.message}</List.Item>
-      <List.Item>{message.timestamp}</List.Item>
-      <DeleteButton messageId={message.id} />
+    < >
+      <List.Item >
+        <DeleteButton messageId={message.id} />
+        {message.message}
+        {message.timestamp}
+      </List.Item>
+
     </>
   );
 };
