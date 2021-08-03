@@ -96,9 +96,15 @@ const MessageInput = ({ chatId }) => {
         onPress={handlePress}
       />
 
-      <Icon color="red" as={Ionicons} name="attach" onPress={pickImage}></Icon>
+      <Icon
+        color="red"
+        as={Ionicons}
+        name="attach"
+        onPress={pickImage}
+        style={styles.Icon}
+      ></Icon>
       {img && (
-        <Image source={{ uri: img }} style={{ width: 200, height: 200 }} />
+        <Image source={{ uri: img }} style={{ width: 100, height: 100 }} />
       )}
     </SafeAreaView>
   );
@@ -112,6 +118,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     borderRadius: 10,
+    marginBottom: 60,
   },
   Safe: {
     display: "flex",
@@ -120,6 +127,7 @@ const styles = StyleSheet.create({
   },
   Icon: {
     fontSize: 30,
+    marginBottom: 50,
   },
 });
 
