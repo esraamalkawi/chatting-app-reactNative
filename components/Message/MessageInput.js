@@ -23,13 +23,15 @@ const MessageInput = ({ chatId }) => {
   };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.Safe}>
       <TextInput
         style={styles.input}
         onChangeText={(message) => setMessage({ ..._message, message })}
         value={_message}
+
       />
       <Icon
+        style={styles.Icon}
         as={AntDesign}
         name="caretright"
         color="red"
@@ -41,11 +43,24 @@ const MessageInput = ({ chatId }) => {
 
 const styles = StyleSheet.create({
   input: {
+    width: 290,
     height: 40,
     margin: 12,
     borderWidth: 1,
     padding: 10,
+    borderRadius: 10
   },
+  Safe: {
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "row"
+  },
+  Icon: {
+
+    fontSize: 30,
+
+  }
 });
+
 
 export default MessageInput;
