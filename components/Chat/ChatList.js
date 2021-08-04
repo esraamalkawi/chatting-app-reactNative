@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { AntDesign } from "@expo/vector-icons";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, ScrollView, StyleSheet } from "react-native";
 import { Center, Spinner, List, Box, Icon } from "native-base";
 import ChatItem from "./ChatItem";
 
@@ -30,7 +30,9 @@ const ChatList = ({ navigation }) => {
           color="red"
           onPress={() => navigation.navigate("CreateChat")}
         /> */}
-        <List>{chatList}</List>
+        <ScrollView>
+          <List>{chatList}</List>
+        </ScrollView>
       </Box>
     </View>
   );
