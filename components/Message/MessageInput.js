@@ -51,36 +51,41 @@ const MessageInput = ({ chatId }) => {
       chatId: chatId,
       image: img,
     };
-
     dispatch(createMessage(newMessage));
   };
 
+  const onChangeMessage = (m) => {
+    setMessage({ ..._message, message: m })
+  }
+
   return (
     <SafeAreaView style={styles.Safe}>
-      <TextInput
-        style={styles.input}
-        onChangeText={(message) => setMessage({ ..._message, message })}
-        value={_message}
-      />
       <Icon
         style={styles.Icon}
         as={AntDesign}
         name="caretright"
         color="red"
-        onPress={handlePress}
+        onPress={() => handlePress()}
       />
 
-      <Icon color="red" as={Ionicons} name="attach" onPress={pickImage}></Icon>
+      <TextInput
+        style={styles.input}
+        onChangeText={(message) => onChangeMessage(message)}
+        value={_message}
+      />
+      <Icon color="red" as={Ionicons} name="attach" onPress={pickImage} style={styles.Icon}></Icon>
       {img && (
         <Image source={{ uri: img }} style={{ width: 200, height: 200 }} />
       )}
+
+
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   input: {
-    width: 290,
+    width: 100,
     height: 40,
     margin: 12,
     borderWidth: 1,
@@ -93,7 +98,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   Icon: {
-    fontSize: 30,
+    fontSize: 15,
   },
 });
 

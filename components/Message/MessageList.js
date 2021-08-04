@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { StyleSheet } from "react-native";
 import { Center, Spinner, List, Box } from "native-base";
@@ -10,6 +10,7 @@ const MessageList = ({ navigation, route }) => {
   const { chat } = route.params;
   const messages = useSelector((state) => state.messages.messages);
   const messageLoading = useSelector((state) => state.messages.loading);
+  const [myMessage, setMyMessage] = useState([])
   if (messageLoading)
     return (
       <Center flex={1}>
@@ -17,15 +18,21 @@ const MessageList = ({ navigation, route }) => {
       </Center>
     );
 
-  const messageList = messages
-    .filter((message) => message.chatId === chat.id)
-    .map((_message) => (
-      <MessageItem
-        key={_message.id}
-        navigation={navigation}
-        message={_message}
-      />
-    ));
+  useEffect(() => {
+    const myMessges = messages
+      .filter((message) => message.chatId == chat.id)
+    setMyMessage(myMessges)
+  }, [])
+
+  console.log(myMessage.length);
+  const messageList = myMessage.map((_message) => (
+    <MessageItem
+      key={_message.id}
+      navigation={navigation}
+      message={_message}
+    />
+  ));
+
 
   return (
     <Center flex={1}>
